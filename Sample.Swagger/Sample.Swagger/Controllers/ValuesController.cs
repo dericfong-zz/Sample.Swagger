@@ -10,6 +10,10 @@ namespace Sample.Swagger.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        /// <summary>
+        /// This is example text for api description!!!!@!
+        /// </summary>
+        /// <returns></returns>
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
