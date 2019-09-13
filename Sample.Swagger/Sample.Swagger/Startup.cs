@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Sample.Swagger.Swagger;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Sample.Swagger
@@ -42,7 +43,7 @@ namespace Sample.Swagger
                     Description = $"{this.HostingEnvironment.EnvironmentName}, Test API",
                 });
 
-                //c.OperationFilter<AddRequiredHeaderParameter>();
+                c.OperationFilter<AddRequiredHeaderParameter>();
 
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
