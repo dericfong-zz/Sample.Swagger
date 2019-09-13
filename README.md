@@ -12,3 +12,6 @@ Add this to project file:
 </PropertyGroup>
 
 ```
+
+Install this package
+Install-Package Microsoft.AspNetCore.Mvc.Api.Analyzers -Version 2.2.6 [Link to Microsoft.AspNetCore.Mvc.Api.Analyzers](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Api.Analyzers)
