@@ -28,6 +28,24 @@ namespace Sample.Swagger.Controllers
             return "value";
         }
 
+        /// <summary>
+        /// Example to pass multiple parameter
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        [HttpGet("{id}/{name}")]
+        public ActionResult<sampleobj> GetObj(int id, string name)
+        {
+            var returnObj = new sampleobj
+            {
+                FirstName = name,
+                LastName = "lastName1",
+                Age = 20
+            };
+            return Ok(returnObj);
+        }
+
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
@@ -45,5 +63,12 @@ namespace Sample.Swagger.Controllers
         public void Delete(int id)
         {
         }
+    }
+
+    public class sampleobj
+    {
+        public int Age { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
