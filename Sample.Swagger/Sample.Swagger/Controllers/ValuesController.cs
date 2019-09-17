@@ -22,9 +22,14 @@ namespace Sample.Swagger.Controllers
             return new string[] { "value1", "value2" };
         }
 
+        /// <summary>
+        /// Sample of Param description
+        /// </summary>
+        /// <param name="id">This id is SampleID</param>
+        /// <returns></returns>
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<string> GetBySampleID(int id)
         {
             return "value";
         }

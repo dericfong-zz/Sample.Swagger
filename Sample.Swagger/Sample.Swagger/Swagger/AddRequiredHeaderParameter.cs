@@ -24,7 +24,8 @@ namespace Sample.Swagger.Swagger
                 Name = "test-api-key",
                 In = "header",
                 Type = "string",
-                Required = true
+                Required = true,
+                Description = "This is required header!"
             });
             operation.Parameters.Add(new NonBodyParameter
             {
