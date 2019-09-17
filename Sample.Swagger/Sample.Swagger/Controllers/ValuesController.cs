@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Sample.Swagger.Controllers
@@ -26,6 +27,17 @@ namespace Sample.Swagger.Controllers
         public ActionResult<string> Get(int id)
         {
             return "value";
+        }
+
+        [HttpGet("Get1")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(sampleobj))]
+        public IActionResult Get1()
+        {
+            return Ok(new sampleobj()
+            {
+                Age = 22,
+                FirstName = "test1"
+            });
         }
 
         /// <summary>
