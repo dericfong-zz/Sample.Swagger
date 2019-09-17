@@ -29,6 +29,29 @@ namespace Sample.Swagger.Controllers
         }
 
         /// <summary>
+        /// Example for return list of object
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("GetObjList")]
+        public ActionResult<IEnumerable<sampleobj>> GetObjList()
+        {
+            return new List<sampleobj>{ new sampleobj()
+            {
+                FirstName = "FirstName1",
+                LastName = "lastName1",
+                Age = 20
+            },
+            new sampleobj()
+            {
+                FirstName = "FirstName2",
+                LastName = "lastName2",
+                Age = 21
+            }
+            };
+        }
+
+        /// <summary>
         /// Example to pass multiple parameter
         /// </summary>
         /// <param name="id"></param>
