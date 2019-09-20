@@ -46,6 +46,23 @@ namespace Sample.Swagger.Controllers
         }
 
         /// <summary>
+        /// if keyin 0 will show notfound
+        /// </summary>
+        /// <param name="aa"></param>
+        /// <returns></returns>
+        [HttpGet("testNotFound")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
+        public IActionResult testNotFound(int aa = 0)
+        {
+            if (aa == 0)
+                return NotFound();
+
+            return Ok(aa);
+        }
+
+        /// <summary>
         /// Example for return list of object
         /// </summary>
         /// <param name="id"></param>
