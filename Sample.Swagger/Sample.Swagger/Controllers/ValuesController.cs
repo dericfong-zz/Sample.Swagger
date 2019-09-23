@@ -63,6 +63,27 @@ namespace Sample.Swagger.Controllers
         }
 
         /// <summary>
+        /// return bad request with object type
+        /// </summary>
+        /// <param name="aa"></param>
+        /// <returns></returns>
+        [HttpGet("testBadRequest")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(badsampleobj), StatusCodes.Status400BadRequest)]
+        [ProducesDefaultResponseType]
+        public IActionResult testBadReq(int aa = 0)
+        {
+            if (aa == 0)
+                return BadRequest(new badsampleobj
+                {
+                    ErrorCode = "Er1",
+                    ErrorMessage = "Msg1"
+                });
+
+            return Ok(aa);
+        }
+
+        /// <summary>
         /// Example for return list of object
         /// </summary>
         /// <param name="id"></param>
@@ -127,5 +148,12 @@ namespace Sample.Swagger.Controllers
         public int Age { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+    }
+
+    public class badsampleobj
+    {
+        public string ErrorCode { get; set; }
+        public string ErrorMessage { get; set; }
+        public string StackTrace { get; set; }
     }
 }
